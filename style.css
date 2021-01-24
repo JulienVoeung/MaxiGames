@@ -1,0 +1,1471 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Initialisation éléments principaux */
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease 0s;
+}
+ul {
+    list-style-type: none;
+}
+
+/* Menu */
+
+.header {
+    margin: auto;
+    background-color: #1F618D;
+}
+.container {
+    max-width: 1600px;
+    margin: auto;
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.barreDeRecherche form input {
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 30px;
+    display: inline-block;
+    outline: none;
+    padding-left: 10px;
+}
+.barreDeRecherche form .boutonRecherche{
+    display: inline-block;
+}
+.barreDeRecherche form .boutonRecherche button {
+    background-color: white;
+    color: black;
+    padding: 6px 8px;
+    border: 1px solid black;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+}
+.barreDeRecherche form .boutonRecherche button:hover {
+    background-color: #FBFCFC;
+}
+header li {
+    display: inline-block;
+    padding: 0 15px;
+}
+header li a:hover {
+    color:#34495E;
+}
+.btn-compte {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 25px;
+}
+.btn-compte:hover {
+    color: #34495E;
+}
+.fa.fa-user-o {
+    font-size: 16px;
+}
+
+/*********************************** Début Page d'accueil ***********************************/
+
+/* Slider */
+
+.img_slider {
+    position: relative;
+    width: 100%;
+    height: 750px;
+}
+.img_slider .slide {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+.img_slider .slide.active {
+    clip-path: circle(150% at 0 50%);
+}
+.img_slider .slide img {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+.img_slider .slide .info {
+    position: absolute;
+    top: 0;
+    padding: 15px 30px;
+}
+.img_slider .navigation {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.img_slider .navigation .btn {
+    background: black;
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.img_slider .navigation .btn.active {
+    background: blue;
+}
+
+/* Informations à gauche du slider */
+
+.info {
+    width: 600px;
+    margin-top: 120px;
+    margin-left: 110px;
+}
+.info #titre_slide {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 100%;
+    padding: 0;
+}
+.info p {
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+.info a {
+    padding: 17px 41px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+}
+.info a:hover {
+    background-color: #1B4F72;
+}
+/* Nouveautés */
+
+#titre_elements h1 {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+#titre_elements h1::after {
+    content: "";
+    background: orange;
+    width: 210px;
+    height: 5px;
+    border-radius: 5px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+.produits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.produit {
+    max-width: 310px;
+    height: 470px;
+    border: solid 1px black;
+    padding: 20px;
+    margin: 0px 5px;
+    position: relative;
+    transition: transform 0.5s;
+}
+.produit:hover {
+    transform: translateY(-5%)
+}
+.produit h4 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.produit h5 {
+    margin-bottom: 15px;
+}
+#btn-produit {
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #1E3D59;
+    padding: 14px 69px;
+    border-radius: 30px;
+    position: absolute;
+    right: 50px;
+}
+
+#btn-produit:hover {
+    background-color: #1B4F72;
+}
+
+/* Section Présentation produits 1 */
+
+.big-container {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-gap: 15px;
+    grid-template-areas: 
+        "SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2"
+        "SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2"
+        "SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2"
+        "SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2 SP_2"
+        "SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_3 SP_3 SP_3 SP_3 SP_4 SP_4 SP_4 SP_4"
+        "SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_3 SP_3 SP_3 SP_3 SP_4 SP_4 SP_4 SP_4"
+        "SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_1 SP_3 SP_3 SP_3 SP_3 SP_4 SP_4 SP_4 SP_4"
+        ;
+}
+.big-container img {
+    width: 100%;
+    height: 100%;
+}
+.SP_1 {
+    grid-area: SP_1;
+    position: relative;
+    transition: transform 0.5s;
+}
+.SP_1:hover {
+    transform: translateY(-10px);
+}
+#btn-SP_1 {
+    position: absolute;
+    bottom: 5%;
+    left: 12%;
+    font-size: 16px;
+}
+.SP_2 {
+    grid-area: SP_2;
+    position: relative;
+    transition: transform 0.5s;
+}
+.SP_2:hover {
+    transform: translateY(-10px);
+}
+#btn-SP_2 {
+    position: absolute;
+    bottom: 27%;
+    font-size: 18px;
+    left: 5%;
+}
+.SP_3 {
+    grid-area: SP_3;
+    position: relative;
+    transition: transform 0.5s;
+}
+.SP_3:hover {
+    transform: translateY(-10px);
+}
+.btn-SP_3 {
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+#btn-SP_3et4 {
+    padding: 15px 22px;
+    background-color: #1E3D59;
+    border-radius: 50px;
+}
+#btn-SP_3et4:hover {
+    background-color: #1B4F72;
+}
+.SP_4 {
+    grid-area: SP_4;
+    position: relative;
+    transition: transform 0.5s;
+}
+.SP_4:hover {
+    transform: translateY(-10px);
+}
+.btn-SP_4 {
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+#btn-SP_3et4:hover {
+    background-color: #1B4F72;
+}
+
+/* Section Présentation produits 2 */
+
+.SPP_2 {
+    position: relative;
+}
+.SPP_2 img {
+    width: 100%;
+    height: auto;
+}
+.SPP_2Texte {
+    position: absolute;
+    right: 5%;
+    top: 35%;
+    text-align: right;
+    width: 500px;
+    color: white;
+}
+.SPP_2Texte p {
+    padding: 30px 0;
+}
+.SPP_2Texte a {
+    font-size: 20px;
+}
+
+/* Informations Complémentaires */
+
+.infoComp img {
+    width: 73%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    border: solid 2px black;
+}
+
+/*********************************** Fin page d'accueil ***********************************/
+
+/* Footer */
+
+.footer {
+    background-color: #1E3D59;
+    color: white;
+    width: 100%;
+    max-height: 550px;
+    margin-top: 10px;
+}
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 75px;
+}
+.footerSection_1 {
+    flex-basis: 25%;
+}
+.footerSection_2 {
+    flex-basis: 25%;
+}
+.footerSection_3 {
+    flex-basis: 25%;
+}
+.footerSection_4 {
+    flex-basis: 25%;
+}
+.footerSection_4 ul li img {
+    width: 60px;
+    height: 60px;
+}
+#logo_footer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#copyright p {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/*********************************** Début Page de produits (Consoles/Jeux/Accessoires/Occasion) ***********************************/
+
+/* Titre et tri */
+
+.titreTriPage {
+    margin: 30px 0;
+}
+
+.titreTriPage #titre_elements_sans_trait {
+    display: inline;
+}
+.titreTriPage #titre_elements_sans_trait h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline;
+}
+
+.tri {
+    float: right;
+    transform: translateY(50%);
+}
+.tri p {
+    display: inline;
+}
+#tri_produits {
+    display: inline;
+    border: 1px solid;
+}
+
+/* Presentation des produits */
+
+.ligne {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pre_prod {
+    grid-area: pre_prod;
+    width: 447px;
+    height: 585px;
+    border: 2px solid black;
+    display: inline;
+    transition: transform 0.5s;
+    margin-bottom: 60px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.pre_prod:hover {
+    transform: translateY(-2%);
+}
+.pre_prod_container {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-right: 53px;
+    padding-left: 53px;
+}
+.pre_prod a img {
+    width: 340px;
+    height: 440px;
+    border: 1px solid black;
+}
+#trait {
+    height: 2px;
+    background-color: black;
+    margin: 10px 0;
+}
+
+/* Pagination */
+
+.pagination {
+    margin-bottom: 50px;
+}
+.pagination ul li {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    position: relative;
+    margin-right: 20px;
+}
+.pagination ul li a {
+    color: black;
+    font-size: 40px;
+    padding: 12px 30px;
+    position: absolute;
+    font-weight: normal;
+}
+.pagination ul li a:hover {
+    color: #555;
+}
+
+#boutonavis button{
+    padding: 16px 40px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#boutonavis button:hover{
+    background-color: #1B4F72;
+}
+/*********************************** Fin Page de produits ***********************************/
+
+/*********************************** Début Présentation de produit ***********************************/
+
+/* Section presentation du produit */
+
+.pageProduitContainer {
+    max-width: 1600px;
+    margin: auto;
+}
+.presentationProduit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 40px 0px;
+}
+.sectionGauche {
+    width: 750px;
+    height: 800px;
+    border: 2px solid black;
+}
+.sectionGauche #imageProduit img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 800px;
+}
+.sectionDroite {
+    width: 750px;
+    height: 800px;
+}
+.avisProduit {
+    padding: 5px 0;
+}
+#prixProduit p {
+    font-size: 22px;
+    font-weight: 600;
+}
+#quantiteProduit {
+    padding: 5px 0;
+}
+#quantiteProduit h3 {
+    display: inline;
+    padding-right: 3px;
+}
+#stockProduit {
+    padding: 5px 0;
+}
+#stockProduit p {
+    font-size: 20px;
+    font-weight: 800;
+    color: chartreuse;
+}
+#epuiseProduit {
+    padding: 5px 0;
+}
+#epuiseProduit p {
+    font-size: 20px;
+    font-weight: 800;
+    color: red;
+}
+.descriptionProduit {
+    padding: 20px 0;
+    height: 420px;
+}
+.descriptionProduit h3 {
+    padding: 10px 0;
+}
+#descriptionProduitTexte  {
+    padding: 20px;
+    border: 2px solid black;
+    height: 330px;
+    overflow-x: none;
+    overflow-y: scroll;
+}
+#descriptionProduitTexte p {
+    font-size: 20px;
+    text-align: justify;
+    font-weight: 500;
+}
+.boutton_cta_panier {
+    margin-top: 20px;
+    padding: 20px 10px;
+    background-color: #1E3D59;
+    width: 250px;
+    text-align: center;
+    border-radius: 30px;
+}
+.boutton_cta_panier:hover {
+    background-color: #34495E;
+    cursor: pointer;
+}
+
+/* Section avis clients disponibles */
+
+.avisClientsDispoPetitConteneur {
+    padding: 15px;
+    border: 2px solid black;
+    height: 120px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.avisClientDispoProduit{
+    margin-bottom: 10px;
+}
+
+#nomClientDispo{
+    display: inline-block;
+}
+#nomClientDispo p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#dateAvisClientDispo {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Formulaire avis clients */
+
+.conteneurFormulaireAvisClients {
+    height: 400px;
+}
+.titreFormulaire {
+    padding-bottom: 15px;
+}
+label {
+    font-size: 18px;
+}
+.prenomClientFormulaire {
+    display: inline-block;
+    margin-right: 30px;
+}
+.nomClientFormulaire {
+    display: inline-block;
+}
+.choixEtoilesClient .avis {
+    display: inline-block;
+    margin: 5px 0;
+}
+textarea {
+    vertical-align: top;
+    margin-bottom: 30px;
+}
+
+/*********************************** Fin Présentation de produit ***********************************/
+
+/*********************************** Début Page de Panier ***********************************/
+
+.titrePagePanier {
+    margin: 30px 0;
+}
+.traitHorizontal {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+/* Section gauche récap produit */
+
+.sectionRecapProduit {
+    border: 2px solid black;
+    padding: 30px 50px;
+    width: 850px;
+    margin: 30px 0;
+    display: inline-block;
+}
+.sectionRecapProduit h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.prodPanier {
+    border: 1px solid black;
+    height: 250px;
+    padding: 15px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.prodPanier img {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: 1px solid black;
+    width: 200px;
+    margin-right: 30px;
+}
+.prodPanier p {
+    position: absolute;
+    left: 230px;
+    font-size: 30px;
+}
+.prodPanier h2 {
+    position: absolute;
+    left: 230px;
+    top: 60px;
+}
+.prodPanier .quantiteProduitPanier {
+    position: absolute;
+    left: 230px;
+    bottom: 15px;
+}
+.prodPanier .quantiteProduitPanier h3 {
+    display: inline-block;
+    margin-right: 5px;
+}
+.prodPanier a {
+    position: absolute;
+    color: black;
+    bottom: 15px;
+    right: 15px;
+    font-size: 20px;
+}
+.prodPanier a:hover {
+    color: #555;
+}
+
+/* Section droite récap produit */
+
+.sectionDroitePanier {
+    float: right;
+}
+.sectionPrixTotal {
+    border: 2px solid black;
+    padding: 30px 50px;
+    width: 500px;
+    margin: 30px 0;
+    position: relative;
+    font-size: 20px;
+}
+.sectionPrixTotal h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+.sectionPrixTotal .sousTotal {
+    margin: 20px 0 5px 0;
+}
+.sectionPrixTotal .sousTotal #ST {
+    display: inline-block;
+}
+.sectionPrixTotal .sousTotal #prixProduits {
+    float: right;
+}
+.sectionPrixTotal .livraison {
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+.sectionPrixTotal .livraison #livr {
+    display: inline-block;
+}
+.sectionPrixTotal .livraison #prixLivr {
+    float: right;
+}
+.sectionPrixTotal .total {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.sectionPrixTotal .total p {
+    font-weight: bold;
+}
+.sectionPrixTotal .total #tot {
+    display: inline-block;
+}
+.sectionPrixTotal .total #prixTot {
+    float: right;
+}
+.sectionPrixTotal a {
+    padding: 20px 90px;
+    background-color: #1E3D59;;
+    border-radius: 40px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.sectionPrixTotal a:hover {
+    background-color: #1B4F72;
+}
+#boutonPaiementPanier {
+    margin-left: 125px;
+    color: white;
+}
+
+/* Section Réduction */
+
+.sectionReduction {
+    border: 2px solid black;
+    position: absolute;
+    width: 580px;
+    padding: 10px;
+}
+.sectionReduction .reduction form input {
+    width: 75%;
+    height: 39px;
+}
+.sectionReduction .reduction form a {
+    padding: 10px 22px;
+    background-color: #1E3D59;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.sectionReduction .reduction form a:hover {
+    background-color: #1B4F72;
+}
+
+/*********************************** Fin Page de Panier ***********************************/
+
+/*********************************** Début Page de Profil ***********************************/
+
+.pageProfil {
+    margin-top: 50px;
+    padding-top: 30px;
+}
+.pageProfil h1 {
+   text-align: center; 
+}
+.pageProfil img {
+    width: 245px;
+}
+.pageProfil h2 {
+    position: absolute;
+    top: 15px;
+    left: 270px;
+    color: black;
+}
+.pageProfil p {
+    position: absolute;
+    top: 60px;
+    left: 270px;
+    width: 240px;
+    text-align: justify;
+    color: black;
+}
+.sectionHaut {
+    margin: 50px 0;
+}
+.sectionBas {
+    margin: 50px 0;
+}
+.pageProfil .sectionHaut .mesInformations {
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    border: 1px solid black;
+    position: relative;
+    display: inline-block;
+    margin-left: 16%;
+    margin-right: 40px;
+    transition: transform 0.3s;
+    background-color: #def;
+}
+.pageProfil .sectionHaut .mesInformations:hover {
+    transform: translateY(-5%);
+}
+.pageProfil .sectionHaut .mesCommandes {
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    border: 1px solid black;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s;
+    background-color: #def;
+}
+.pageProfil .sectionHaut .mesCommandes:hover {
+    transform: translateY(-5%);
+}
+.pageProfil .sectionBas .monMoyenDePaiement {
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    border: 1px solid black;
+    position: relative;
+    display: inline-block;
+    margin-left: 16%;
+    margin-right: 40px;
+    transition: transform 0.3s;
+    background-color: #def;
+}
+.pageProfil .sectionBas .monMoyenDePaiement:hover {
+    transform: translateY(-5%);
+}
+.pageProfil .sectionBas .maMessagerie {
+    width: 500px;
+    height: 250px;
+    padding: 15px;
+    border: 1px solid black;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s;
+    background-color: #def;
+}
+.pageProfil .sectionBas .maMessagerie:hover {
+    transform: translateY(-5%);
+}
+
+#lienprofil{
+    width: 100%;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+#lienprofil a{
+    padding: 16px 40px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+    text-align: center;
+    position: absolute;
+    right: 44%;
+}
+
+#lienprofil a:hover{
+    background-color: #1B4F72;
+}
+
+#lienconnexion {
+    color: #E87311;
+    font-weight: bolder;
+}
+
+#lienconnexion:hover {
+    text-decoration: underline;
+}
+
+.signal{
+    right: -20px;
+    top: 15px;
+    position: absolute;
+}
+
+#liensignal {
+    color: #E87311;
+    font-weight: bolder;
+    margin-right: 50px;;
+}
+
+#liensignal:hover {
+    text-decoration: underline;
+}
+
+/*********************************** Fin Page de Profil ***********************************/
+
+/*********************************** Formulaire ***********************************/
+.sectionConnexion{
+    background-color: #85C1E9;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.sectionConnexion h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #2E3030;
+}
+
+.sectionConnexion .formulaireConnexion form .nomUtilisateur label{
+    display: block;
+    font-size: 20px;
+}
+
+.sectionConnexion .formulaireConnexion form .nomUtilisateur input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.sectionConnexion .formulaireConnexion form .motDePasse label{
+    display: block;
+    font-size: 20px;
+}
+
+.sectionConnexion .formulaireConnexion form .motDePasse input{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.sectionConnexion .formulaireConnexion form .boutonFormulaire button{
+    padding: 16px 40px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.sectionConnexion .formulaireConnexion form .boutonFormulaire button:hover{
+    background-color: #1B4F72;
+}
+
+.sectionConnexion .formulaireConnexion .redirectionInscription {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.sectionConnexion .formulaireConnexion .redirectionAnnuler{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*********************************** Fin Formulaire ***********************************/
+
+/*********************************** Messagerie ***************************************/
+
+.messages{
+    background-color: white;
+    margin-top: 40px;
+    border-radius: 10px;
+    border-color: white;
+    border-style: groove;
+}
+
+.messages .message{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.messages .message .numCom{
+    display: block;
+}
+
+.messages .message .dateCom{
+    display: block;
+}
+
+.messages .message .adresseCom{
+    display: block;
+}
+
+.messages .message .detailCom{
+    display: block;
+}
+
+.messages .message .detailCom .detail{
+    display: block;
+}
+
+
+
+.messages .message span{
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+}
+
+.messages .message .pseudo{
+    margin-left: 10px;
+}
+
+.formChat{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+#boutonmessagerie{
+    width: 100%;
+    position: relative;
+    margin-bottom: 90px;
+}
+
+#boutonmessagerie button{
+    padding: 16px 40px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    cursor: pointer;
+    right: 0px;
+    position: absolute;
+}
+
+#boutonmessagerie button:hover{
+    background-color: #1B4F72;
+}
+/*********************************** Fin Messagerie ***********************************/
+
+.informations{
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.informations p{
+    text-align: center;
+    font-size: 20px;
+}
+
+#lieninformations{
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    margin-top: 60px;
+}
+
+#lieninformations a{
+    padding: 16px 40px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#lieninformations a:hover{
+    background-color: #1B4F72;
+}
+
+/*********************************** Page d'adresse ***********************************/
+
+.sectionAddress{
+    background-color: #85C1E9;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.sectionAddress h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #2E3030;
+}
+.sectionAddress .formulaireAddress form .addressPplUtilisateur label{
+    display: block;
+    font-size: 20px;
+}
+.sectionAddress .formulaireAddress form .addressPplUtilisateur input {
+    height: 40px;
+    width: 100%;
+}
+.sectionAddress .formulaireAddress form .addressSecUtilisateur label{
+    display: block;
+    font-size: 20px;
+}
+.sectionAddress .formulaireAddress form .addressSecUtilisateur input {
+    height: 40px;
+    width: 100%;
+}
+.sectionAddress .formulaireAddress form .villeUtilisateur label{
+    display: block;
+    font-size: 20px;
+}
+.sectionAddress .formulaireAddress form .villeUtilisateur input {
+    height: 40px;
+    width: 100%;
+}
+.sectionAddress .formulaireAddress form .villeUtilisateur {
+    display: inline-block;
+    font-size: 20px;
+    width: 45%;
+}
+.sectionAddress .formulaireAddress form .etatProvinceUtilisateur label{
+    display: block;
+    font-size: 20px;
+}
+.sectionAddress .formulaireAddress form .etatProvinceUtilisateur input {
+    height: 40px;
+    width: 100%;
+}
+.sectionAddress .formulaireAddress form .etatProvinceUtilisateur {
+    display: inline-block;
+    font-size: 20px;
+    width: 45%;
+    float: right;
+}
+.sectionAddress .formulaireAddress form .codePostale {
+    margin-bottom: 40px;
+}
+.sectionAddress .formulaireAddress form .codePostale label {
+    display: block;
+    font-size: 20px;
+}
+.sectionAddress .formulaireAddress form .codePostale input {
+    height: 40px;
+    width: 100%;
+}
+.sectionLivraison{
+    background-color: #85C1E9;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.sectionLivraison h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #2E3030;
+}
+.sectionLivraison .sectionModeLivraison {
+    width: 100%;
+}
+.sectionLivraison .sectionModeLivraison select {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 60px;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.sectionLivraison .boutonFormulaire button{
+    padding: 16px 40px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}
+.sectionLivraison .boutonFormulaire button:hover{
+    background-color: #1B4F72;
+}
+
+/*********************************** Fin page d'adresse ***********************************/
+
+/*********************************** Début page de paiement ***********************************/
+
+.sectionPaiement{
+    background-color: #85C1E9;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.sectionPaiement h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #2E3030;
+}
+.sectionPaiement .formulairePaiement form .numeroCarte label {
+    display: block;
+    font-size: 20px;
+}
+.sectionPaiement .formulairePaiement form .numeroCarte input {
+    width: 100%;
+    height: 40px;
+}
+.sectionPaiement .formulairePaiement form .dateExpiration {
+    width: 70%;
+    display: inline-block;
+}
+.sectionPaiement .formulairePaiement form .dateExpiration label {
+    display: block;
+    font-size: 20px;
+}
+.sectionPaiement .formulairePaiement form .dateExpiration input {
+    width: 45%;
+    height: 40px;
+}
+.sectionPaiement .formulairePaiement form .codeSecurite {
+    width: 28%;
+    display: inline-block;
+    float: right;
+}
+.sectionPaiement .formulairePaiement form .codeSecurite label {
+    display: block;
+    font-size: 20px;
+}
+.sectionPaiement .formulairePaiement form .codeSecurite input {
+    height: 40px;
+    width: 100%;
+}
+.sectionPaiement .boutonFormulairePaiement button{
+    padding: 16px 40px;
+    background-color: #1E3D59;
+    border-radius: 30px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+.sectionPaiement .boutonFormulairePaiement button:hover{
+    background-color: #1B4F72;
+}
+/*********************************** Fin page de paiement ***********************************/
+
+
+/*********************************** Début Page messagerie ***********************************/
+
+.titreMessagerie h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+.containerMessages {
+    min-height: 800px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 30px 80px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.pseudoContact {
+    position: absolute;
+    left: 50%;
+    margin-left: -120px;
+    margin-bottom: 20px;
+}
+.pseudoContact .disponibiliteContact {
+    display: inline-block;
+    margin-right: 15px;
+}
+.pseudoContact .disponibiliteContact .disponible {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 20px;
+}
+.pseudoContact .disponibiliteContact .indisponible {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 20px;
+}
+.pseudoContact h2 {
+    display: inline-block;
+}
+.containerMessages .petitContainerMsgs {
+    margin-top: 50px;
+}
+.containerMessages .petitContainerMsgs .dateMsg {
+    text-align: center;
+    margin: 5px 0;
+}
+.containerMessages .petitContainerMsgs .messageRecu {
+    background-color: #E5E7E9;
+    padding: 10px 30px;
+    border-radius: 30px 30px 30px 0px;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 25px;
+    margin-left: -15px;
+}
+.containerMessages .petitContainerMsgs .messageEnvoye {
+    background-color: #85C1E9;
+    padding: 10px 30px;
+    border-radius: 30px 30px 0px 30px;
+    text-align: justify;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+}
+.containerMessages .formulaireEnvoiMessage {
+    padding: 10px 0;
+}
+.containerMessages .formulaireEnvoiMessage form .ecritureMessage input {
+    width: 84%;
+    height: 50px;
+    border: 2px solid black;
+    padding-left: 10px;
+}
+.containerMessages .formulaireEnvoiMessage form .ecritureMessage input[type="text"]
+{
+    font-size:20px;
+}
+.containerMessages .formulaireEnvoiMessage .ecritureMessage button {
+    height: 54px;
+    border: 2px solid black;
+    width: 14%;
+    float: right;
+    font-size: 25px;
+    background-color: #1F618D;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.containerMessages .formulaireEnvoiMessage .ecritureMessage button:hover {
+    background-color: #1B4F72;
+    color: whitesmoke;
+}
+
+/*********************************** Fin page messagerie ***********************************/
+
+/** Début page confirmation de commande **/
+
+.confCommande {
+    width: fit-content;
+    height: 400px;
+    margin: 0 auto;
+}
+.confCommande .confCommandeBox {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 225px;
+}
+.confCommande .imgConfCommande {
+    display: inline-block;
+}
+.confCommande .imgConfCommande img {
+    width: 96px;
+}
+.confCommande .texteConfCommande {
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+    color: chartreuse;
+    margin-left: 15px;
+}
+.confCommande .texteConfCommande a {
+    color: crimson;
+}
+.confCommande .texteConfCommande a:hover {
+    text-decoration: underline crimson 2px;
+}
+
+/** Fin page confirmation de commande **/
+
+/** Début page non confirmation de commande **/
+
+.confNonCommande {
+    width: fit-content;
+    height: 400px;
+    margin: 0 auto;
+}
+.confNonCommande .confNonCommandeBox {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 225px;
+}
+.confNonCommande .imgNonConfCommande {
+    display: inline-block;
+}
+.confNonCommande .imgNonConfCommande img {
+    width: 96px;
+}
+.confNonCommande .texteNonConfCommande {
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+    color: crimson;
+    margin-left: 15px;
+}
+.confNonCommande .texteNonConfCommande a {
+    color: crimson;
+    font-size: 16px;
+}
+.confNonCommande .texteNonConfCommande a:hover {
+    text-decoration: underline crimson 2px;
+}
+
+/** Fin page confirmation de commande **/
